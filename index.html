@@ -1,74 +1,465 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bukber Alumni 9B 2026</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f5f1e8;
-      text-align: center;
-      color: #333;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bukber Alumni IPS 1</title>
+
+
+<style>
+body {
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    text-align:center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* Glow Ramadan Premium */
+body::after{
+    content:"";
+    position:fixed;
+    width:300px;
+    height:300px;
+    background: radial-gradient(circle, rgba(245,215,110,0.25), transparent 70%);
+    top:-100px;
+    right:-100px;
+    filter: blur(40px);
+    animation: glowMove 10s infinite alternate;
+    pointer-events:none;
+}
+
+@keyframes glowMove{
+    from{
+        transform: translateY(0);
     }
-    .container {
-      padding: 40px 20px;
+    to{
+        transform: translateY(40px);
     }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-    .theme {
-      font-style: italic;
-      color: #2e7d32;
-      margin-bottom: 30px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      max-width: 400px;
-      margin: auto;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #2e7d32;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-    }
-    .footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+}
+
+/* Ornamen Islami */
+body::before {
+    content:"☪ ☪ ☪ ☪ ☪ ☪ ☪ ☪ ☪";
+    position:fixed;
+    width:100%;
+    top:0;
+    font-size:20px;
+    opacity:0.05;
+}
+
+/* Amplop */
+#envelope {
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#1b5e20;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    z-index:999;
+    cursor:pointer;
+}
+
+.hidden { display:none; }
+
+/* Bulan */
+.moon {
+    position:fixed;
+    top:60px;
+    right:-100px;
+    font-size:60px;
+    animation: moonMove 25s linear infinite;
+}
+
+@keyframes moonMove {
+    from { right:-100px; }
+    to { right:110%; }
+}
+
+.overlay {
+    background: linear-gradient(180deg, rgba(15,32,39,0.95), rgba(32,58,67,0.95));
+    min-height:100vh;
+    padding:40px 15px;
+    color:white;
+}
+
+.card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding:20px;
+    border-radius:20px;
+    max-width:400px;
+    margin:20px auto;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    color:white;
+}
+
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+
+.pembukaan {
+    margin-bottom:30px;
+}
+
+.salam-arab {
+    font-size:28px;
+    color:#f5d76e;
+    margin-bottom:10px;
+}
+
+.salam-latin {
+    font-style:italic;
+    margin-bottom:15px;
+    opacity:0.9;
+}
+
+.intro-text {
+    max-width:500px;
+    margin:0 auto;
+    line-height:1.6;
+}
+
+button {
+    background: linear-gradient(45deg,#c9a227,#f5d76e);
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.gallery {
+    display:flex;
+    overflow-x:auto;
+}
+
+.gallery img { object-fit: cover; height: 180px; }
+
+iframe {
+    width:100%;
+    max-width:400px;
+    height:250px;
+    border-radius:15px;
+}
+
+video {
+    width:90%;
+    max-width:400px;
+    border-radius:15px;
+}
+
+.mosque {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:120px;
+    background:url('https://i.ibb.co/0Jmshvb/mosque-silhouette.png') repeat-x;
+    background-size:contain;
+    opacity:0.2;
+}
+
+/* Animasi Smooth Modern */
+#content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+#content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
-  <h1>BUKA BERSAMA ALUMNI</h1>
-  <h2>Kelas 9B MTsN 02 Brebes</h2>
-  <div class="theme">✨ Back to Memory School ✨</div>
-
-  <div class="card">
-    <p><strong>Hari/Tanggal:</strong><br>Senin, 17 Maret 2026</p>
-    <p><strong>Tempat:</strong><br>Lentera Coffee</p>
-    <p><strong>Waktu:</strong><br>16.30 WIB - Selesai</p>
-
-    <a class="btn" href="https://wa.me/62XXXXXXXXXX">
-      Konfirmasi Kehadiran
-    </a>
-  </div>
-
-  <div class="footer">
-    Sampai bertemu dan mengenang masa putih biru bersama 🤍
-  </div>
+<!-- Amplop -->
+<div id="envelope">
+    <div style="font-size:60px;">📩</div>
+    <h2>Klik untuk Buka Undangan</h2>
 </div>
+
+<div class="moon">🌙</div>
+
+<div class="overlay hidden fade-in" id="content">
+    
+<div class="pembukaan">
+    <h2 class="salam-arab">
+        السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهُ
+    </h2>
+    <p class="salam-latin">
+        Assalāmu‘alaikum Warahmatullāhi Wabarakātuh 🌙
+    </p>
+
+    <p class="intro-text">
+        Dengan penuh rasa syukur di bulan suci Ramadhan,
+        kami mengundang teman-teman Alumni IPS 1
+        untuk hadir dalam acara buka bersama
+        yang insyaAllah penuh keberkahan dan kenangan indah.
+    </p>
+</div>
+
+<h1>🌙 BUKA BERSAMA ALUMNI</h1>
+<h2>Kelas 12 IPS 1 SMAN 03 Brebes</h2>
+<p>✨ Back to Memory School ✨</p>
+
+<p><i>يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ
+Yā ayyuhalladzīna āmanū kutiba ‘alaikumush-shiyām
+“Wahai orang-orang yang beriman, diwajibkan atas kamu berpuasa…”</i></p>
+
+<div id="countdown" style="font-weight:bold; margin:15px 0; color:#2e7d32;"></div>
+
+<div class="card">
+<p><b>Hari/Tanggal:</b><br>Minggu, 15 Maret 2026</p>
+<p><b>Tempat:</b><br>Meilani HOME</p>
+<p><b>Waktu:</b><br>17.45 WIB - Selesai</p>
+<button onclick="konfirmasi()">Konfirmasi Kehadiran</button>
+</div>
+
+<h3>Jumlah Alumni Hadir: <span id="jumlahHadir">0</span></h3>
+<ul id="listHadir"></ul>
+
+<h3>📍 Lokasi</h3>
+<iframe 
+src="https://www.google.com/maps?q=Lentera+Coffee+%26+Space&output=embed">
+</iframe>
+
+<section style="max-width: 600px; margin: 20px auto; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #333; padding: 10px;">
+
+    <div style="background: #fff; border-radius: 20px; padding: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; margin-bottom: 25px; border: 1px solid #eee;">
+        <h3 style="margin-top: 0; color: #222; letter-spacing: 1px;">👕 DRESSCODE</h3>
+        <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
+            <div>
+                <div style="width: 60px; height: 60px; background: #000; border-radius: 50%; margin: 0 auto; border: 3px solid #444; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+                <p style="font-size: 14px; margin-top: 10px; margin-bottom: 0;"><b>Atasan</b><br>Bebas sopan</p>
+            </div>
+            <div>
+                <div style="width: 60px; height: 60px; background: linear-gradient(45deg, #eee, #ccc); border-radius: 50%; margin: 0 auto; border: 2px dashed #999; line-height: 60px; color: #666; font-weight: bold;">?</div>
+                <p style="font-size: 14px; margin-top: 10px; margin-bottom: 0;"><b>Bawahan</b><br>Bebas</p>
+            </div>
+        </div>
+        <p style="font-size: 12px; color: #888; font-style: italic;">"Biar foto kelas 12 IPS 1 makin kompak dan estetik!"</p>
+    </div>
+
+    <div style="background: #fffdf5; border-radius: 20px; padding: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); margin-bottom: 25px; border: 1px solid #f0e6cc;">
+        <h3 style="text-align: center; color: #8b6b23; margin-top: 0; margin-bottom: 30px;">📅 RUNDOWN ACARA</h3>
+        
+        <div style="border-left: 2px solid #e0ca91; margin-left: 15px; padding-left: 25px; position: relative;">
+            
+            <div style="margin-bottom: 25px; position: relative;">
+                <div style="position: absolute; width: 12px; height: 12px; background: #8b6b23; border-radius: 50%; left: -32px; top: 5px; border: 2px solid #fff;"></div>
+                <b style="color: #8b6b23; font-size: 14px;">16.30</b>
+                <p style="margin: 5px 0; font-weight: 600;">Waktu Pemberangkatan</p>
+            </div>
+
+            <div style="margin-bottom: 25px; position: relative;">
+                <div style="position: absolute; width: 12px; height: 12px; background: #8b6b23; border-radius: 50%; left: -32px; top: 5px; border: 2px solid #fff;"></div>
+                <b style="color: #8b6b23; font-size: 14px;">17.15</b>
+                <p style="margin: 5px 0; font-weight: 600;">Tikum Langsung di Lokasi</p>
+                <small style="color: #777;">Sesuai maps yang tertera di undangan.</small>
+            </div>
+
+            <div style="margin-bottom: 25px; position: relative;">
+                <div style="position: absolute; width: 12px; height: 12px; background: #8b6b23; border-radius: 50%; left: -32px; top: 5px; border: 2px solid #fff;"></div>
+                <b style="color: #8b6b23; font-size: 14px;">17.50</b>
+                <p style="margin: 5px 0; font-weight: 600;">Persiapan Buka & Sambutan Panitia</p>
+            </div>
+
+            <div style="margin-bottom: 25px; position: relative;">
+                <div style="position: absolute; width: 12px; height: 12px; background: #e67e22; border-radius: 50%; left: -32px; top: 5px; border: 2px solid #fff;"></div>
+                <b style="color: #e67e22; font-size: 14px;">18.00</b>
+                <p style="margin: 5px 0; font-weight: bold; font-size: 16px;">🥐 Buka Puasa</p>
+            </div>
+
+            <div style="margin-bottom: 25px; position: relative;">
+                <div style="position: absolute; width: 12px; height: 12px; background: #8b6b23; border-radius: 50%; left: -32px; top: 5px; border: 2px solid #fff;"></div>
+                <b style="color: #8b6b23; font-size: 14px;">18.30 - 19.15</b>
+                <p style="margin: 5px 0; font-weight: 600;">ISHOMA</p>
+                <small style="color: #777;">Shalat Maghrib & Makan Besar.</small>
+            </div>
+
+
+
+            <div style="margin-bottom: 25px; position: relative;">
+                <div style="position: absolute; width: 12px; height: 12px; background: #2e7d32; border-radius: 50%; left: -32px; top: 5px; border: 2px solid #fff;"></div>
+                <b style="color: #2e7d32; font-size: 14px;">19.30</b>
+                <p style="margin: 5px 0; font-weight: bold; font-size: 16px;">📸 Wajib Foto Bersama</p>
+            </div>
+
+            <div style="margin-bottom: 0; position: relative;">
+                <div style="position: absolute; width: 12px; height: 12px; background: #8b6b23; border-radius: 50%; left: -32px; top: 5px; border: 2px solid #fff;"></div>
+                <b style="color: #8b6b23; font-size: 14px;">20.30 - Selesai</b>
+                <p style="margin: 5px 0; font-weight: 600;">Penutupan & Sambutan Akhir</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="background: #fff; border-radius: 20px; padding: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee;">
+        <h3 style="margin-top: 0; color: #333;">💳 PEMBAYARAN IURAN</h3>
+        
+        <div style="margin: 20px 0;">
+            <p style="font-size: 13px; color: #666; margin-bottom: 12px;">Scan QRIS di bawah ini:</p>
+            <div style="background: #fdfdfd; padding: 10px; border-radius: 15px; display: inline-block; border: 1px solid #f0f0f0;">
+                <img src="bca puspa.jpeg" alt="QRIS" style="width: 180px; height: 180px; border-radius: 10px;">
+                <img src="dana puspa.jpeg" alt="QRIS" style="width: 180px; height: 180px; border-radius: 10px;">
+            </div>
+        </div>
+
+        <div style="margin: 20px 0; font-size: 14px; color: #999;">— ATAU —</div>
+
+        <div style="background: linear-gradient(135deg, #8b6b23, #b89b5e); padding: 20px; border-radius: 15px; color: #fff; text-align: left; position: relative; box-shadow: 0 5px 15px rgba(139,107,35,0.3);">
+            <div style="font-size: 12px; opacity: 0.8; margin-bottom: 5px; letter-spacing: 1px;">BANK TRANSFER (BCA)</div>
+            <div style="font-size: 20px; font-weight: bold; letter-spacing: 2px;">1310876875</div>
+            <div style="font-size: 14px; margin-top: 15px; text-transform: uppercase; font-weight: 500;">a.n PUSPAWATI</div>
+            <div style="position: absolute; right: 20px; top: 20px; font-size: 24px; opacity: 0.3;">💳</div>
+        </div>
+
+        <p style="font-size: 12px; color: #888; margin-top: 20px;">
+            🙏 Kirim bukti transfer ke WhatsApp Panitia (Tika Nandia) untuk verifikasi.
+        </p>
+    </div>
+
+</section>
+
+<h3>📸 Galeri Kenangan</h3>
+<div class="gallery">
+<img src="foto1.jpeg">
+<img src="foto2.jpeg">
+<img src="foto3.jpg">
+<img src="foto4.jpeg">
+<img src="foto5.jpeg">
+<img src="foto6.jpeg">
+<img src="ips1.jpeg">
+<img src="ips2.jpeg">
+<img src="ips3.jpeg">
+</div>
+
+<h3>🎥 Video Kenangan</h3>
+<video autoplay muted loop controls>
+<source src="video9b.mp4" type="video/mp4">
+<source src="lahirbatin.mp4" type="video/mp4">
+</video>
+
+<p style="margin-top:30px;">
+Sampai bertemu dan mengenang masa putih biru 💜
+</p>
+
+</div>
+
+<div class="mosque"></div>
+
+<audio id="bgMusic" loop>
+<source src="sound.mpeg" type="audio/mpeg">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+const envelope = document.getElementById("envelope");
+const content = document.getElementById("content");
+const music = document.getElementById("bgMusic");
+music.volume = 0.3;
+
+/* ===== BUKA AMPLOP ===== */
+envelope.addEventListener("click", function(){
+
+    envelope.style.transition = "0.8s ease";
+    envelope.style.opacity = "0";
+
+    setTimeout(()=>{
+        envelope.style.display = "none";
+
+        content.classList.remove("hidden");
+
+        setTimeout(()=>{
+            content.classList.add("show");
+        },200);
+
+        music.play();
+
+        confetti({
+            particleCount:200,
+            spread:100,
+            origin:{ y:0.6 }
+        });
+
+    },800);
+
+});
+
+    
+
+    // COUNTDOWN
+    var countDate = new Date("March 15, 2026 18:00:00").getTime();
+    setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+        days + " Hari " + hours + " Jam " + minutes + " Menit " + seconds + " Detik";
+    }, 1000);
+
+    // LOAD DATA
+    let hadirList = JSON.parse(localStorage.getItem("hadirList")) || [];
+    let listElement = document.getElementById("listHadir");
+    let jumlahElement = document.getElementById("jumlahHadir");
+
+    hadirList.forEach(nama => {
+        let li = document.createElement("li");
+        li.textContent = nama + " - Hadir ✅";
+        listElement.appendChild(li);
+    });
+
+    jumlahElement.innerText = hadirList.length;
+
+    window.konfirmasi = function(){
+        var nama = prompt("Masukkan Nama Kamu:");
+        if(nama){
+            hadirList.push(nama);
+            localStorage.setItem("hadirList", JSON.stringify(hadirList));
+
+            let li = document.createElement("li");
+            li.textContent = nama + " - Hadir ✅";
+            listElement.appendChild(li);
+
+            jumlahElement.innerText = hadirList.length;
+
+            confetti({
+                particleCount:150,
+                spread:70,
+                origin:{ y:0.6 }
+            });
+        }
+    }
+
+});
+</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
